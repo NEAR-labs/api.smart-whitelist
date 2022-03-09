@@ -1,1 +1,14 @@
 # api.smart-whitelist
+
+Before run create .env file and fill it with:
+```
+MONGO,
+PORT,
+NETWORK,
+SERVICE_ACCOUNT_SEED_PHRASE,
+SERVICE_ACCOUNT_ID,
+SMART_WHITELIST_CONTRACT_ID,
+ONFIDO_API_TOKEN,
+ONFIDO_REFERRER,
+EXTERNAL_SERVER_URL
+```

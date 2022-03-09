@@ -1,0 +1,37 @@
+{
+  "name": "api.smart-whitelist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "start-dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=.env.development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NEAR-labs/api.smart-whitelist.git"
+  },
+  "dependencies": {
+    "bs58": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.2",
+    "near-api-js": "^0.44.2",
+    "near-seed-phrase": "^0.2.0",
+    "@onfido/api": "^2.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  },
+  "keywords": [],
+  "author": "Oleh Ivaniuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NEAR-labs/api.smart-whitelist/issues"
+  },
+  "homepage": "https://github.com/NEAR-labs/api.smart-whitelist#readme"
+}
