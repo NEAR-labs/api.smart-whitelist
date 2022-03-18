@@ -1,5 +1,5 @@
 import { Account } from "../../models/Account.js";
-import { addAccount } from "./addAccount.js";
+import { addAccountToWhitelist } from "./addAccountToWhitelist.js";
 import { Event } from "../../models/Event.js";
 
 export const eventHandling = async (req, event) => {
@@ -22,7 +22,7 @@ export const eventHandling = async (req, event) => {
         let account = await Account.findOne({ applicantId, checkId });
         if (account && account.status === 'verification_in_progress') {
           if (successResult) {
-            await addAccount(account.accountId, near);
+            await addAccountToWhitelist(account.accountId, near);
           }
           account.status = successResult ? 'account_is_whitelisted' : 'applicant_was_rejected';
           account.checkResult = check.result;

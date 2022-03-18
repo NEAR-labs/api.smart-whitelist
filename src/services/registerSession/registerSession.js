@@ -13,7 +13,6 @@ export const registerSession = async (req, res) => {
     if (!accountId) {
       return res.status(400).send({ error: 'No account_id specified' });
     }
-    console.log(`account_id: ${accountId}`);
 
     const account = await Account.findOne({ accountId });
     if (account && account.status === 'account_is_whitelisted') {
@@ -28,7 +27,6 @@ export const registerSession = async (req, res) => {
 
     if (signatureCheckRequired) {
       const signature = `${req.body["signature"]}`;
-      console.log(`signature: ${signature}`);
 
       const message = `${accountId}-${new Date().toISOString().substring(0, 10)}`;
       if (!verifySignature(signature, publicKey, message)) {

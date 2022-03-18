@@ -12,8 +12,6 @@ export const checkParameters = async (req, res, useContract = true) => {
     message = 'No account_id specified';
     res.status(400).send({ error: message });
   } else {
-    console.log(`account_id: ${accountId}`);
-
     let publicKey = null;
     if (useContract) {
       publicKey = await getApplicantPk(accountId, req.app.get('near'));
@@ -27,8 +25,6 @@ export const checkParameters = async (req, res, useContract = true) => {
 
     if (!message) {
       const signature = `${req.body["signature"]}`;
-      console.log(`signature: ${signature}`);
-
       account = await Account.findOne({ accountId });
       if (!account) {
         message = 'Account ID has not registered in the system. Try to sign up first';

@@ -20,6 +20,21 @@ const schema = new Schema({
   checkStartTimestamp: Date,
   checkFinishTimestamp: Date,
   email: String,
+  firstName: String,
+  lastName: String,
+  dob: String,
+  buildingName: String,
+  buildingNumber: String,
+  country: String,
+  flatNumber: String,
+  line1: String,
+  line2: String,
+  line3: String,
+  postcode: String,
+  state: String,
+  street: String,
+  subStreet: String,
+  town: String,
 });
 schema.index({applicantId: 1, checkId: 1}, {unique: false});
 

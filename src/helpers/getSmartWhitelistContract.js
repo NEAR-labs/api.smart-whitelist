@@ -5,6 +5,6 @@ export const getSmartWhitelistContract = (near) => {
   const accountId = process.env.SERVICE_ACCOUNT_ID;
   return new Contract(new Account(near.connection, accountId), contractId, {
     viewMethods: ['get_applicant_pk'],
-    changeMethods: ['add_account'],
+    changeMethods: ['add_account', 'remove_account'],
   });
 }
